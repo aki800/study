@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'notebooks#index'
+  root 'categories#index'
 end

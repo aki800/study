@@ -1,0 +1,33 @@
+%header{class: "header"}
+  .title
+    =image_tag "", class: "title__img"
+    %h1.title__text G-life
+  %nav{class: "nav"}
+    = link_to "" , class: "nav__button" do
+      新規登録
+    = link_to "" , class: "nav__button" do
+      ログイン
+
+.contents
+  %h2{class: "heading"}
+    カテゴリーから選ぶ
+  .categories-wrapper
+    = link_to "", class: "categories-wrapper__box" do
+      学習
+    = link_to "", class: "categories-wrapper__box" do
+      運動
+    = link_to "", class: "categories-wrapper__box" do
+      美容
+
+  .categories-wrapper
+    = link_to "", class: "categories-wrapper__box" do
+      ダイエット
+    = link_to "", class: "categories-wrapper__box" do
+      料理
+    = link_to "", class: "categories-wrapper__box" do
+      早起き
+
+  = link_to "", class: "button" do
+    もっと見る
+
+%footer{class: "footer"}

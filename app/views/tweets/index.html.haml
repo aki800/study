@@ -1,0 +1,79 @@
+= render "shared/header"
+%nav{class: "nav-categories"}
+  .categories-header-wrapper
+    =link_to "", class: "categories-header-wrapper__button" do
+      プログラミング
+    =link_to "", class: "categories-header-wrapper__button" do
+      ダイエット
+    =link_to "", class: "categories-header-wrapper__button" do
+      早起き
+  =link_to "", class: "add-button" do
+    ➕
+
+
+
+.contents-tweets-index
+  .side-bar
+    =image_tag "", class: "side-bar__avatar"
+    .side-bar__info
+      =link_to "", class: "side-bar__info__user-name" do
+        私
+      .side-bar__info__follow
+        フォロー数
+        %p{class: "side-bar__info__follow__number"} 0
+      .side-bar__info__follow
+        フォロワー数
+        %p{class: "side-bar__info__follow__number"} 0
+    .side-bar__goals
+      %p 目標
+      %p 1週間の目標
+      %p 今日の目標
+
+  %main{class: "tweets-wrapper"}
+    .tweets-wrapper__box
+      =image_tag "", class: "tweets-wrapper__box__avatar"
+      =link_to "", class: "tweets-wrapper__box__user-name" do
+        Aさん
+      .tweets-wrapper__box__date
+        %p 2019年4月30日 15:20
+      .tweets-wrapper__box__goal
+        今日の目標  rubyの基礎を身につける
+      .tweets-wrapper__box__tweet
+        朝rubyの勉強した！クラスとインスタンスを理解できたよ
+      .tweets-wrapper__box__image
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+
+    .tweets-wrapper__box
+      =image_tag "", class: "tweets-wrapper__box__avatar"
+      =link_to "", class: "tweets-wrapper__box__user-name" do
+        Bさん
+      .tweets-wrapper__box__date
+        %p 2019年4月30日 15:20
+      .tweets-wrapper__box__goal
+        今日の目標  rubyの基礎を身につける
+      .tweets-wrapper__box__tweet
+        朝rubyの勉強した！クラスとインスタンスを理解できたよ
+      .tweets-wrapper__box__image
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+
+    .tweets-wrapper__box
+      =image_tag "", class: "tweets-wrapper__box__avatar"
+      =link_to "", class: "tweets-wrapper__box__user-name" do
+        Cさん
+      .tweets-wrapper__box__date
+        %p 2019年4月30日 15:20
+      .tweets-wrapper__box__goal
+        今日の目標  rubyの基礎を身につける
+      .tweets-wrapper__box__tweet
+        朝rubyの勉強した！クラスとインスタンスを理解できたよ
+      .tweets-wrapper__box__image
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"
+        =image_tag "", class: "tweets-wrapper__box__image__ele"

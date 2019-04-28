@@ -1,13 +1,4 @@
-%header{class: "header"}
-  .title
-    =image_tag "", class: "title__img"
-    %h1.title__text G-life
-  %nav{class: "nav"}
-    = link_to "" , class: "nav__button" do
-      新規登録
-    = link_to "" , class: "nav__button" do
-      ログイン
-
+= render "shared/header"
 .contents
   %h2{class: "heading"}
     カテゴリーから選ぶ
@@ -30,4 +21,4 @@
   = link_to "", class: "button" do
     もっと見る
 
-%footer{class: "footer"}
+= render "shared/footer"

@@ -1,0 +1,18 @@
+.contents-tweets-new
+  %main{class: "tweet-form-wrapper"}
+    %h2{class: "tweet-title"}
+      投稿する
+    .tweet-goal
+      %h3{class: "tweet-goal__label"}
+        今日達成すること
+      .tweet-goal__text
+        rubyのクラスとインスタンスを理解する
+      .tweet-goal__text
+        rubyのクラスとインスタンスを理解する
+      .tweet-goal__text
+        rubyのクラスとインスタンスを理解する
+    = form_with url: tweets_path, class: "tweet-form" do |f|
+      = f.label :"ツイート", class: "tweet-form__label"
+      = f.text_area :tweet, class: "tweet-form__text", rows: "10"
+      = f.file_field :image, class: "tweet-form__image"
+      = f.submit "投稿", class: "tweet-form__button"

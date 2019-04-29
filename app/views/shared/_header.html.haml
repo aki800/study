@@ -3,7 +3,11 @@
     =image_tag "", class: "title__img"
     %h1.title__text G-life
   %nav{class: "nav"}
-    = link_to "" , class: "nav__button" do
-      新規登録
-    = link_to "" , class: "nav__button" do
-      ログイン
+    - unless user_signed_in?
+      = link_to new_user_registration_path , class: "nav__button" do
+        新規登録
+      = link_to new_user_session_path , class: "nav__button" do
+        ログイン
+    - else
+      = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
+        ログアウト

@@ -52,4 +52,4 @@ production:
   database: study_production
   username: study
   password: <%= ENV['STUDY_DATABASE_PASSWORD'] %>
-  socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock

@@ -11,8 +11,11 @@
         rubyのクラスとインスタンスを理解する
       .tweet-goal__text
         rubyのクラスとインスタンスを理解する
-    = form_with url: tweets_path, class: "tweet-form" do |f|
+    = form_with model: @tweet,local: true, class: "tweet-form" do |f|
       = f.label :"ツイート", class: "tweet-form__label"
-      = f.text_area :tweet, class: "tweet-form__text", rows: "10"
-      = f.file_field :image, class: "tweet-form__image"
+      = f.text_area :text, class: "tweet-form__text", rows: "10"
+      .tweet-form__image
+        = f.fields_for :tweet_images do |tweet_image|
+          = tweet_image.file_field :image
       = f.submit "投稿", class: "tweet-form__button"
+

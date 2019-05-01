@@ -30,50 +30,5 @@
       %p 今日の目標
 
   %main{class: "tweets-wrapper"}
-    .tweets-wrapper__box
-      =image_tag "", class: "tweets-wrapper__box__avatar"
-      =link_to "", class: "tweets-wrapper__box__user-name" do
-        Aさん
-      .tweets-wrapper__box__date
-        %p 2019年4月30日 15:20
-      .tweets-wrapper__box__goal
-        今日の目標  rubyの基礎を身につける
-      .tweets-wrapper__box__tweet
-        朝rubyの勉強した！クラスとインスタンスを理解できたよ
-      .tweets-wrapper__box__image
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
+    = render partial: "tweet", collection: @tweets, :as => "tweet"
 
-    .tweets-wrapper__box
-      =image_tag "", class: "tweets-wrapper__box__avatar"
-      =link_to "", class: "tweets-wrapper__box__user-name" do
-        Bさん
-      .tweets-wrapper__box__date
-        %p 2019年4月30日 15:20
-      .tweets-wrapper__box__goal
-        今日の目標  rubyの基礎を身につける
-      .tweets-wrapper__box__tweet
-        朝rubyの勉強した！クラスとインスタンスを理解できたよ
-      .tweets-wrapper__box__image
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-
-    .tweets-wrapper__box
-      =image_tag "", class: "tweets-wrapper__box__avatar"
-      =link_to "", class: "tweets-wrapper__box__user-name" do
-        Cさん
-      .tweets-wrapper__box__date
-        %p 2019年4月30日 15:20
-      .tweets-wrapper__box__goal
-        今日の目標  rubyの基礎を身につける
-      .tweets-wrapper__box__tweet
-        朝rubyの勉強した！クラスとインスタンスを理解できたよ
-      .tweets-wrapper__box__image
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"
-        =image_tag "", class: "tweets-wrapper__box__image__ele"

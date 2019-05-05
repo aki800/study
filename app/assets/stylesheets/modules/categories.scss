@@ -8,24 +8,17 @@
   }
   .categories-wrapper {
     margin: 0 auto;
-    display: table;
-    table-layout: fixed;
-    border-spacing: 30px 10px;
-    width: 70%;
-    height: 40%;
+    width: 900px;
+    min-height: 200px;
     background-color: #ccc;
     &__box {
-      display: table-cell;
+      display: inline-block;
+      margin: 10px;
+      width: calc( calc(900px - 100px) / 4);
+      height: 190px;
       border-radius: 5px;
       background-color: #ffdbc9;
     }
-  }
-  .button {
-    display: block;
-    margin: 0 auto;
-    width: 70%;
-    height: 10%;
-    text-align: right;
   }
 }
 

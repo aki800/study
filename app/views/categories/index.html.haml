@@ -4,7 +4,7 @@
     カテゴリーから選ぶ
   .categories-wrapper
     - @categories.each do |category|
-      %div{class: "categories-wrapper__box", id: "category_#{category.id}"}
+      %div{class: "categories-wrapper__box", id: "category_#{category.name}"}
         = category.name
 
 

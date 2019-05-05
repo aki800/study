@@ -6,6 +6,13 @@ $(function() {
     $(".categories-wrapper").append(html);
   }
 
+  function showSubSubCategories(category) {
+    var html = `<a href = "/categories/${category.id}/tweets", class = "categories-wrapper__box", id = "subcategory_${category.name}">
+                  ${category.name}`
+    $(".categories-wrapper").append(html);
+  }
+
+
 //study categories
   $("#category_勉強").on("click", function() {
     $(".categories-wrapper").empty();
@@ -16,42 +23,42 @@ $(function() {
     $("#subcategory_受験勉強").on("click", function() {
       $(".categories-wrapper").empty();
       for (var i = 0, sub_sub_len = gon.sub_sub_categories[0].length; i < sub_sub_len; ++i) {
-      showSubCategories(gon.sub_sub_categories[0][i]);
+      showSubSubCategories(gon.sub_sub_categories[0][i]);
       }
     });
     //certification categories
     $("#subcategory_資格勉強").on("click", function() {
       $(".categories-wrapper").empty();
       for (var i = 0, sub_sub_len = gon.sub_sub_categories[1].length; i < sub_sub_len; ++i) {
-      showSubCategories(gon.sub_sub_categories[1][i]);
+      showSubSubCategories(gon.sub_sub_categories[1][i]);
       }
     });
     //language categories
     $("#subcategory_語学勉強").on("click", function() {
       $(".categories-wrapper").empty();
       for (var i = 0, sub_sub_len = gon.sub_sub_categories[2].length; i < sub_sub_len; ++i) {
-      showSubCategories(gon.sub_sub_categories[2][i]);
+      showSubSubCategories(gon.sub_sub_categories[2][i]);
       }
     });
     //learning categories
     $("#subcategory_学問").on("click", function() {
       $(".categories-wrapper").empty();
       for (var i = 0, sub_sub_len = gon.sub_sub_categories[3].length; i < sub_sub_len; ++i) {
-      showSubCategories(gon.sub_sub_categories[3][i]);
+      showSubSubCategories(gon.sub_sub_categories[3][i]);
       }
     });
     //business categories
     $("#subcategory_ビジネス").on("click", function() {
       $(".categories-wrapper").empty();
       for (var i = 0, sub_sub_len = gon.sub_sub_categories[4].length; i < sub_sub_len; ++i) {
-      showSubCategories(gon.sub_sub_categories[4][i]);
+      showSubSubCategories(gon.sub_sub_categories[4][i]);
       }
     });
     //other study categories
     $("#subcategory_その他の勉強").on("click", function() {
       $(".categories-wrapper").empty();
       for (var i = 0, sub_sub_len = gon.sub_sub_categories[5].length; i < sub_sub_len; ++i) {
-      showSubCategories(gon.sub_sub_categories[5][i]);
+      showSubSubCategories(gon.sub_sub_categories[5][i]);
       }
     });
   });

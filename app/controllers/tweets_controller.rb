@@ -1,6 +1,11 @@
 class TweetsController < ApplicationController
+  before_action :set_category
+  before_action :authenticate_user!
   def index
-    @tweets = Tweet.includes(:user).order("created_at DESC")
+    unless @category.user_ids.include?(current_user.id)
+      @category.users << current_user
+    end
+    @tweets = @category.tweets.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -9,9 +14,9 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.create(tweet_params)
+    @tweet = @category.tweets.create(tweet_params)
     if @tweet.save
-      redirect_to tweets_path
+      redirect_to category_tweets_path(@category.id)
     else
       render :new
     end
@@ -20,5 +25,9 @@ class TweetsController < ApplicationController
   private
   def tweet_params
     params.require(:tweet).permit(:text, tweet_images_attributes: [:image]).merge(user_id: current_user.id)
+  end
+
+  def set_category
+    @category = Category.find(params[:category_id])
   end
 end

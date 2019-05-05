@@ -12,6 +12,9 @@
       background-color: #ffd5ec;
       line-height: 50px;
     }
+    &__button.emphasis {
+      background-color: #ff82b2;
+    }
     &__button:hover {
       opacity: 0.7;
     }

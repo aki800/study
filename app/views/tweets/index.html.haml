@@ -1,13 +1,14 @@
 = render "shared/header"
 %nav{class: "nav-categories"}
   .categories-header-wrapper
-    =link_to "", class: "categories-header-wrapper__button" do
-      プログラミング
-    =link_to "", class: "categories-header-wrapper__button" do
-      ダイエット
-    =link_to "", class: "categories-header-wrapper__button" do
-      早起き
-  =link_to "", class: "add-button" do
+    - current_user.categories.each do |category|
+      - if category == @category
+        =link_to category_tweets_path(category.id), class: "categories-header-wrapper__button emphasis" do
+          = category.name
+      - else
+        =link_to category_tweets_path(category.id), class: "categories-header-wrapper__button" do
+          = category.name
+  =link_to root_path, class: "add-button" do
     ➕
 
 

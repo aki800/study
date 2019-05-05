@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :tweets
+  has_many :category_users
+  has_many :categories, through: :category_users
 end

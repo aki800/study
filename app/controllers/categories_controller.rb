@@ -42,14 +42,15 @@ class CategoriesController < ApplicationController
     gon.sub_categories =[]
     gon.sub_sub_categories = []
     i = 0
-  while i < @categories.length
-    gon.sub_categories << @categories[i].children
-      n = 0
-      while n < @categories[i].children.length
-          gon.sub_sub_categories << @categories[i].children[n].children
-          n += 1
-      end
-    i += 1
+    while i < @categories.length
+      gon.sub_categories << @categories[i].children
+        n = 0
+        while n < @categories[i].children.length
+            gon.sub_sub_categories << @categories[i].children[n].children
+            n += 1
+        end
+      i += 1
+    end
+
   end
-end
 end

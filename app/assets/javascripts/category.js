@@ -1,17 +1,21 @@
 $(function() {
 
   function showSubCategories(category) {
-    var html = `<div class = "categories-wrapper__box", id = "subcategory_${category.name}">
+      var html = `<div class = "categories-wrapper__box", id = "subcategory_${category.name}">
+              <div class= "categories-wrapper__box__title">
+                <div class= "categories-wrapper__box__title__text">
+                    ${category.name}
+                </div>
+                    </div>
+                    </div>`
+
+      var html2 = `<a href = "/categories/${category.id}/tweets", class = "categories-wrapper__box", id = "subcategory_${category.name}">
                   ${category.name}`
     $(".categories-wrapper").append(html);
   }
 
   function showSubSubCategories(category) {
-    var html = `<a href = "/categories/${category.id}/tweets", class = "categories-wrapper__box", id = "subcategory_${category.name}">
-                  ${category.name}`
-    $(".categories-wrapper").append(html);
   }
-
 
 //study categories
   $("#category_勉強").on("click", function() {
@@ -83,5 +87,12 @@ $(function() {
      for (var n = 0, sub_len = gon.sub_categories[3].length; n < sub_len; ++n) {
       showSubCategories(gon.sub_categories[3][n]);
       }
+  });
+
+  $(document).ready(function(){
+    $('.categories-images').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
   });
 });

@@ -1,0 +1,37 @@
+.contents-users-show {
+  clear: both;
+  height: 90%;
+  width: 100%;
+  .side-bar {
+    float: left;
+    min-height: 100px;
+    width: 300px;
+    margin: 30px;
+    padding: 20px;
+    background-color: #ffd5ec;
+    &__avatar {
+      display: inline-block;
+      width: 90px;
+      height: 100px;
+    }
+    &__info {
+      display: inline-block;
+      vertical-align: top;
+      width: 200px;
+      height: 100px;
+      background-color: #ffffee;
+      &__user-name {
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+        text-decoration: none;
+      }
+      &__follow {
+        display: inline-block;
+        &__number {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

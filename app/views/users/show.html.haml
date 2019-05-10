@@ -1,0 +1,23 @@
+= render "shared/header"
+
+.contents-users-show
+  .side-bar
+    = link_to user_path(current_user) do
+      =image_tag "", class: "side-bar__avatar"
+    .side-bar__info
+      =link_to user_path(current_user), class: "side-bar__info__user-name" do
+        = current_user.nickname
+      .side-bar__info__follow
+        フォロー数
+        %p{class: "side-bar__info__follow__number"} 0
+      .side-bar__info__follow
+        フォロワー数
+        %p{class: "side-bar__info__follow__number"} 0
+
+  .side-bar-bottom
+    .side-bar-bottom__button
+      カテゴリー
+    .side-bar-bottom__button
+      アカウント編集
+
+

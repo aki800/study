@@ -5,9 +5,12 @@
     %title Study
     = csrf_meta_tags
     = csp_meta_tag
+
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{:href => "slick/slick.scss", :rel => "stylesheet", :type => "text/scss"}/
+    %link{:href => "slick/slick-theme.scss", :rel => "stylesheet", :type => "text/scss"}/
     = include_gon
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-
+    %script{:src => "//code.jquery.com/jquery-migrate-1.2.1.min.js", :type => "text/javascript"}
   %body
     = yield

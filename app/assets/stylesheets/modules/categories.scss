@@ -1,23 +1,56 @@
 .contents {
   width: 100%;
-  height: 70%;
+  background-color: $contents-backgroundcolor;
+  .categories-images {
+    &__ele {
+      display: block;
+      height: 300px;
+    }
+  }
   .heading {
     text-align: center;
     width: 100%;
     height: 10%;
+    color: $font-color;
   }
   .categories-wrapper {
     margin: 0 auto;
-    width: 900px;
+    padding: 10px;
+    width: 950px;
     min-height: 200px;
-    background-color: #ccc;
+    background-color: $contents-backgroundcolor;
     &__box {
       display: inline-block;
+      position: relative;
       margin: 10px;
       width: calc( calc(900px - 100px) / 4);
       height: 190px;
       border-radius: 5px;
-      background-color: #ffdbc9;
+      background-color: $content-backgroundcolor;
+      border: groove 0.5px $border-color;
+      &__title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 85%;
+        width: 85%;
+
+        &__text {
+          text-align: center;
+          margin-bottom: 5px;
+          color: $font-color;
+
+        }
+        &__image {
+        display: block;
+        margin: 0 auto;
+        height: 150px;
+        width: 150px;
+        }
+      }
     }
   }
 }

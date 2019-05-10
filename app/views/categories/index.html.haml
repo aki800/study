@@ -1,11 +1,31 @@
 = render "shared/header"
 .contents
+  .categories-images
+    =image_tag("study_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+    =image_tag("exercise_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+    =image_tag("health_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+    =image_tag("hobby_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+
+
+
   %h2{class: "heading"}
     カテゴリーから選ぶ
   .categories-wrapper
     - @categories.each do |category|
       %div{class: "categories-wrapper__box", id: "category_#{category.name}"}
-        = category.name
+        .categories-wrapper__box__title
+          .categories-wrapper__box__title__text
+            = category.name
+          - if category.name == "勉強"
+            =image_tag("study.png", class: "categories-wrapper__box__title__image")
+          - if category.name == "運動"
+            =image_tag("exercise.png", class: "categories-wrapper__box__title__image")
+          - if category.name == "健康"
+            =image_tag("health.png", class: "categories-wrapper__box__title__image")
+          - if category.name == "趣味・創作活動"
+            =image_tag("hobby.png", class: "categories-wrapper__box__title__image")
+
+
 
 
   / 勉強カテゴリー

@@ -1,3 +1,5 @@
+= render "shared/header"
+
 .contents-tweets-new
   %main{class: "tweet-form-wrapper"}
     %h2{class: "tweet-title"}
@@ -12,8 +14,7 @@
       .tweet-goal__text
         rubyのクラスとインスタンスを理解する
     = form_with model: [@category, @tweet], local: true, class: "tweet-form" do |f|
-      = f.label :"ツイート", class: "tweet-form__label"
-      = f.text_area :text, class: "tweet-form__text", rows: "10"
+      = f.text_area :text, class: "tweet-form__text", rows: "10", placeholder: "達成したことをツイートしよう"
       .tweet-form__image
         = f.fields_for :tweet_images do |tweet_image|
           = tweet_image.file_field :image

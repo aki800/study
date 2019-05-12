@@ -1,0 +1,42 @@
+.contents-signup {
+  width: 100%;
+  height: 90%;
+  padding-top: 50px;
+  background-color: $contents-backgroundcolor;
+  .signup-wrapper {
+    margin: 0 auto;
+    padding: 20px;
+    width: 450px;
+    min-height: 300px;
+    background-color: $content-backgroundcolor;
+    .signup-wrapper__heading {
+      text-align: center;
+    }
+    .signup-wrapper__forms {
+      margin: 40px;
+      text-align: center;
+      .field {
+        margin: 10px;
+        .field__label {
+          width: 219px;
+          margin: 0 auto;
+          text-align: left;
+        }
+        .field__text {
+          input {
+            height: 30px;
+            border-radius: 5px;
+          }
+        }
+      }
+      .actions {
+        margin: 40px;
+         &__button {
+          width: 219px;
+          height: 30px;
+          border-radius: 5px;
+         }
+      }
+    }
+  }
+}

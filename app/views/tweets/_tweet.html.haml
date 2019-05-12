@@ -4,6 +4,8 @@
     = tweet.user.nickname
   .tweets-wrapper__box__date
     = tweet.created_at
+  = link_to "", class: "tweets-wrapper__box__icon" do
+    %i{class: "fas fa-chevron-down fa-lg my-gray"}
   .tweets-wrapper__box__goal
     今日の目標  rubyの基礎を身につける
   .tweets-wrapper__box__tweet

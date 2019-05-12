@@ -8,7 +8,7 @@ muscle, yoga, walking_running, gymnastic, sport,other_exercise = exercise.childr
 
 diet, sleep, meal, morning_activity, rehabilitation, beauty, other_health = health.children.create([{name: "ダイエット"}, {name: "睡眠"}, {name: "食事"}, {name: "朝活"}, {name: "リハビリ"}, {name: "美容"}, {name: "その他の健康"}])
 
-book, music_instrument, painting, writing, game, other_hobby = hobby.children.create([{name: "読書"}, {name: "楽器演奏"}, {name: "絵を描く"}, {name: "執筆"}, {name: "その他の趣味・創作活動"}])
+book, music_instrument, painting, writing, other_hobby = hobby.children.create([{name: "読書"}, {name: "楽器演奏"}, {name: "絵を描く"}, {name: "執筆"}, {name: "その他の趣味・創作活動"}])
 
 
 
@@ -25,7 +25,7 @@ soccer, basketball, baseball, golf, tennis, volleyball, other_sport = sport.chil
 
 programming, communication, self_development, news, employment, other_business = business.children.create([{name: "プログラミング"}, {name: "コミュニケーション"}, {name: "自己啓発"}, {name: "時事"}, {name: "就職・転職"}, {name: "その他のビジネス"}])
 
-literary_work, manual, business_book, technical_book, other_book = ([{name: "文芸書"}, {name: "実用書"}, {name: "ビジネス書"}, {name: "その他の本"}])
+literary_work, manual, business_book, technical_book, other_book = book.children.create([{name: "文芸書"}, {name: "実用書"}, {name: "ビジネス書"}, {name: "その他の本"}])
 
 piano, guitar, violin, dram, flute, sax, other_musinc_instument = music_instrument.children.create([{name: "ピアノ"}, {name: "ギター"}, {name: "バイオリン"}, {name: "ドラム"}, {name: "フルート"}, {name: "サックス"}, {name: "その他の楽器"}])
 

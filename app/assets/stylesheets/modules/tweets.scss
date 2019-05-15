@@ -158,6 +158,12 @@
         width: 60px;
         height: 60px;
       }
+      &__avatar-not {
+        display: inline-block;
+        .my-gray {
+          color: #c0c0c0;
+        }
+      }
       &__user-name {
         display: inline-block;
         vertical-align: top;

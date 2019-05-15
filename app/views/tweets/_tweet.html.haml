@@ -1,5 +1,10 @@
 .tweets-wrapper__box
-  =image_tag "", class: "tweets-wrapper__box__avatar"
+  = link_to user_path(current_user) do
+    - if current_user.image.present?
+      = image_tag(current_user.image.url, class: "tweets-wrapper__box__avatar")
+    - else
+      .side-bar__avatar-not
+        %i{class: "fas fa-user-circle fa-8x my-gray"}
   =link_to "", class: "tweets-wrapper__box__user-name" do
     = tweet.user.nickname
   .tweets-wrapper__box__date

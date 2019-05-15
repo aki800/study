@@ -17,7 +17,11 @@
   .contents-wrapper
     .side-bar
       = link_to user_path(current_user) do
-        =image_tag "", class: "side-bar__avatar"
+        - if current_user.image.present?
+          = image_tag(current_user.image.url, class: "side-bar__avatar")
+        - else
+          .side-bar__avatar-not
+            %i{class: "fas fa-user-circle fa-8x my-gray"}
       .side-bar__info
         =link_to user_path(current_user), class: "side-bar__info__user-name" do
           = current_user.nickname

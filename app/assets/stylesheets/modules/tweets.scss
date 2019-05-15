@@ -70,9 +70,18 @@
       width: 300px;
       background-color: $contents-backgroundcolor;
       &__avatar {
+        display: block;
+        margin: 0 auto;
         height: 120px;
         width: 120px;
+        border-radius: 50%;
         margin-bottom: 20px;
+      }
+      &__avatar-not {
+        .my-gray {
+          color: #c0c0c0;
+          margin-bottom: 20px;
+        }
       }
       &__info {
         margin: 0 auto;
@@ -171,7 +180,7 @@
         display: inline-block;
         vertical-align: top;
         height: 60px;
-        margin-left: 33%;
+        margin-left: 43%;
         .my-gray {
           color: $border-color;
         }

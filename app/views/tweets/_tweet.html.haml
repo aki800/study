@@ -1,16 +1,17 @@
 .tweets-wrapper__box
-  = link_to user_path(current_user) do
-    - if current_user.image.present?
-      = image_tag(current_user.image.url, class: "tweets-wrapper__box__avatar")
-    - else
-      .tweets-wrapper__box__avatar-not
-        %i{class: "fas fa-user-circle fa-3x my-gray"}
-  =link_to "", class: "tweets-wrapper__box__user-name" do
-    = tweet.user.nickname
-  .tweets-wrapper__box__date
-    = tweet.created_at
-  .tweets-wrapper__box__icon
-    %i{class: "fas fa-chevron-down fa-lg my-gray"}
+  .tweets-wrapper__box__head{id: "box-#{tweet.id}"}
+    = link_to user_path(current_user) do
+      - if current_user.image.present?
+        = image_tag(current_user.image.url, class: "tweets-wrapper__box__head__avatar")
+      - else
+        .tweets-wrapper__box__head__avatar-not
+          %i{class: "fas fa-user-circle fa-3x my-gray"}
+    =link_to "", class: "tweets-wrapper__box__head__user-name" do
+      = tweet.user.nickname
+    .tweets-wrapper__box__head__date
+      = tweet.created_at
+    .tweets-wrapper__box__head__icon
+      %i{class: "fas fa-chevron-down fa-lg my-gray"}
   .tweets-wrapper__box__goal
     今日の目標  rubyの基礎を身につける
   .tweets-wrapper__box__tweet
@@ -19,8 +20,22 @@
     - tweet.tweet_images.each do |tweet_images|
       = image_tag tweet_images.image.url, class: "tweets-wrapper__box__images__ele"
 
-  .tweets-list
-    %a{href: edit_category_tweet_path(@category, tweet), class: "tweets-list__ele"}
-      編集する
-    =link_to "/categories/#{@category.id}/tweets/#{tweet.id}", method: :delete, class: "tweets-list__ele" do
-      削除する
+
+:javascript
+      $(function() {
+        $(".fas.fa-chevron-down").on("click", function() {
+        var html = `<div class= "tweets-list">
+                  <a href = "/categories/#{@category.id}/tweets/#{tweet.id}/edit", class= "tweets-list__ele">
+                    編集する
+                  </a>
+                  <a href= "/categories/#{@category.id}/tweets/#{tweet.id}", data-method="delete", class= "tweets-list__ele">
+                    削除する
+                  </a>
+                </div>`
+        $("#box-#{tweet.id}").append(html);
+
+        $(".fas.fa-chevron-down").on("click", function() {
+          $(".tweets-list").remove();
+          });
+        });
+      });

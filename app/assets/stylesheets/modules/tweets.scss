@@ -118,26 +118,6 @@
         background-color: $content-backgroundcolor;
       }
     }
-    .tweets-list {
-      float: right;
-      margin: 50px 200px 0 0;
-      z-index: 2;
-      width: 80px;
-      height: 70px;
-      background-color: $content-backgroundcolor;
-      &__ele {
-        display: block;
-
-        height: calc(100% / 2);
-        line-height: 35px;
-        border-bottom: solid thin $border-color;
-        text-decoration: none;
-        color: $font-color;
-      }
-      &__ele:hover {
-        background-color: $header-category-color;
-      }
-    }
   }
 }
 
@@ -153,42 +133,62 @@
       border-radius: 5px;
       text-align: left;
       border-bottom: ridge thin $border-color;
-      &__avatar {
-        display: inline-block;
-        width: 60px;
-        height: 60px;
-      }
-      &__avatar-not {
-        display: inline-block;
-        .my-gray {
+      &__head {
+        &__avatar {
+          display: inline-block;
+          width: 60px;
+          height: 60px;
+        }
+        &__avatar-not {
+          display: inline-block;
+          .my-gray {
+            color: #c0c0c0;
+          }
+        }
+        &__user-name {
+          display: inline-block;
+          vertical-align: top;
+          height: 60px;
+          margin-left: 20px;
+          line-height: 60px;
+          text-decoration: none;
+          color: $font-color;
+          font-weight: bold;
+        }
+        &__date {
+          display: inline-block;
+          vertical-align: top;
+          height: 60px;
+          margin-left: 20px;
+          line-height: 60px;
           color: #c0c0c0;
         }
-      }
-      &__user-name {
-        display: inline-block;
-        vertical-align: top;
-        height: 60px;
-        margin-left: 20px;
-        line-height: 60px;
-        text-decoration: none;
-        color: $font-color;
-        font-weight: bold;
-      }
-      &__date {
-        display: inline-block;
-        vertical-align: top;
-        height: 60px;
-        margin-left: 20px;
-        line-height: 60px;
-        color: #c0c0c0;
-      }
-      &__icon {
-        display: inline-block;
-        vertical-align: top;
-        height: 60px;
-        margin-left: 43%;
-        .my-gray {
-          color: $border-color;
+        .tweets-list {
+          display: inline-block;
+          margin-left: 200px;
+          width: 80px;
+          height: 70px;
+          background-color: $content-backgroundcolor;
+          &__ele {
+            display: block;
+            height: calc(100% / 2);
+            line-height: 35px;
+            border-bottom: solid thin $border-color;
+            text-decoration: none;
+            color: $font-color;
+          }
+          &__ele:hover {
+            background-color: $header-category-color;
+          }
+        }
+        &__icon {
+          float: right;
+          vertical-align: top;
+          margin-right: 10px;
+          height: 60px;
+          .my-gray {
+            color: $border-color;
+          }
         }
       }
       &__goal {

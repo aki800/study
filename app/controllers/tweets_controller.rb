@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
       @category.users << current_user
     end
     @tweets = @category.tweets.includes(:user).order("created_at DESC")
+
   end
 
   def new

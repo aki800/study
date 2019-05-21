@@ -17,7 +17,11 @@
   .contents-wrapper
     .side-bar
       = link_to user_path(current_user) do
-        =image_tag "", class: "side-bar__avatar"
+        - if current_user.image.present?
+          = image_tag(current_user.image.url, class: "side-bar__avatar")
+        - else
+          .side-bar__avatar-not
+            %i{class: "fas fa-user-circle fa-8x my-gray"}
       .side-bar__info
         =link_to user_path(current_user), class: "side-bar__info__user-name" do
           = current_user.nickname
@@ -29,10 +33,23 @@
             フォロワー数
             %p{class: "side-bar__info__follow__number"} 0
       .side-bar__goals
-        %p 目標
-        %p 1週間の目標
-        %p 今日の目標
+        - if @goal.present?
+          .side-bar__goals__text
+            %p{class: "side-bar__goals__text__null"}
+              = simple_format(@goal.goal)
+          .side-bar__goals__buttons
+            =link_to new_category_goal_path(@category), class: "side-bar__goals__buttons__ele" do
+              %i{class: "fas fa-plus"}
+            =link_to edit_category_goal_path(@category, @goal), class: "side-bar__goals__buttons__ele" do
+              %i{class: "fas fa-edit"}
+            =link_to "/categories/#{@category.id}/goals/#{@goal.id}", method: :delete, class: "side-bar__goals__buttons__ele" do
+              %i{class: "fas fa-trash-alt"}
+        - else
+          .side-bar__goals__text
+            目標を記入しよう
+          .side-bar__goals__buttons
+            =link_to new_category_goal_path(@category), class: "side-bar__goals__buttons__ele" do
+              %i{class: "fas fa-plus"}
 
     %main{class: "tweets-wrapper"}
       = render partial: "tweet", collection: @tweets, :as => "tweet"
-

@@ -26,5 +26,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public/uploads/tweet_image/image
-/app/assets/images
+
+/public/uploads/*

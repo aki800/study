@@ -29,6 +29,11 @@ class GoalsController < ApplicationController
   end
 
   def destroy
+    if @goal.destroy
+      redirect_to category_tweets_path(@category.id)
+    else
+      redirect_to category_tweets_path(@category.id)
+    end
   end
 
   private

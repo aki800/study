@@ -35,13 +35,14 @@
       .side-bar__goals
         - if @goal.present?
           .side-bar__goals__text
-            = simple_format(@goal.goal)
+            %p{class: "side-bar__goals__text__null"}
+              = simple_format(@goal.goal)
           .side-bar__goals__buttons
             =link_to new_category_goal_path(@category), class: "side-bar__goals__buttons__ele" do
               %i{class: "fas fa-plus"}
             =link_to edit_category_goal_path(@category, @goal), class: "side-bar__goals__buttons__ele" do
               %i{class: "fas fa-edit"}
-            =link_to "", class: "side-bar__goals__buttons__ele" do
+            =link_to "/categories/#{@category.id}/goals/#{@goal.id}", method: :delete, class: "side-bar__goals__buttons__ele" do
               %i{class: "fas fa-trash-alt"}
         - else
           .side-bar__goals__text

@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   before_action :set_category
   before_action :set_tweet, only: [:edit, :update, :destroy]
+  before_action :set_goal, only: [:index, :new, :edit]
   before_action :authenticate_user!
   def index
     unless @category.user_ids.include?(current_user.id)
@@ -56,5 +57,9 @@ class TweetsController < ApplicationController
 
   def set_tweet
     @tweet = Tweet.find(params[:id])
+  end
+
+  def set_goal
+    @goal = @category.goals.where(user_id: current_user.id).last
   end
 end

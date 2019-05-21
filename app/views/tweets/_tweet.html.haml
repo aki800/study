@@ -12,8 +12,10 @@
       = tweet.created_at
     .tweets-wrapper__box__head__icon
       %i{class: "fas fa-chevron-down fa-lg my-gray"}
-  .tweets-wrapper__box__goal
-    今日の目標  rubyの基礎を身につける
+  %h3{class: "tweets-wrapper__box__goal-title"}
+    目標
+  .tweets-wrapper__box__goal-text
+    = simple_format(@goal.goal)
   .tweets-wrapper__box__tweet
     = tweet.text
   .tweets-wrapper__box__images

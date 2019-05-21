@@ -1,0 +1,18 @@
+= render "shared/header"
+%nav{class: "nav-categories"}
+  .categories-header-wrapper
+    - current_user.categories.each do |category|
+      - if category == @category
+        =link_to category_tweets_path(category.id), class: "categories-header-wrapper__button-emphasis" do
+          = category.name
+      - else
+        =link_to category_tweets_path(category.id), class: "categories-header-wrapper__button" do
+          = category.name
+
+.contents-tweets-new
+  %main{class: "tweet-form-wrapper"}
+    %h2{class: "tweet-title"}
+      目標を決めよう
+    = form_with model: [@category, @goal], local: true, class: "tweet-form" do |f|
+      = f.text_area :goal, class: "tweet-form__text", rows: "20", placeholder: "（例）&#13;&#10;最終目標&#13;&#10;○○○○○○○○○○○○○○○○○○○○○○&#13;&#10;&#13;&#10;1週間の目標&#13;&#10;△△△△△△△△△△△△△△△△△△△△△△&#13;&#10;&#13;&#10;今日の目標&#13;&#10;□□□□□□□□□□□□□□□□□□".html_safe
+      = f.submit "登録", class: "tweet-form__button"

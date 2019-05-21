@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
       @category.users << current_user
     end
     @tweets = @category.tweets.includes(:user).order("created_at DESC")
-
+    @goal = @category.goals.where(user_id: current_user.id).last
   end
 
   def new

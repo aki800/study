@@ -33,9 +33,17 @@
             フォロワー数
             %p{class: "side-bar__info__follow__number"} 0
       .side-bar__goals
-        %p 目標
-        %p 1週間の目標
-        %p 今日の目標
+        .side-bar__goals__text
+          = simple_format(@goal.goal)
+        .side-bar__goals__buttons
+          =link_to new_category_goal_path(@category), class: "side-bar__goals__buttons__ele" do
+            %i{class: "fas fa-plus"}
+          =link_to "", class: "side-bar__goals__buttons__ele" do
+            %i{class: "fas fa-edit"}
+          =link_to "", class: "side-bar__goals__buttons__ele" do
+            %i{class: "fas fa-trash-alt"}
+
+
 
     %main{class: "tweets-wrapper"}
       = render partial: "tweet", collection: @tweets, :as => "tweet"

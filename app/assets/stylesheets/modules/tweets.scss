@@ -139,7 +139,7 @@
     width: 700px;
     background-color: $content-backgroundcolor;
     &__box {
-      margin-bottom: 20px;
+
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
@@ -203,9 +203,14 @@
           }
         }
       }
-      &__goal {
+      &__goal-title {
+      }
+      &__goal-text {
+        border-bottom: solid thin $border-color;
+
       }
       &__tweet {
+        margin-top: 30px;
       }
       &__images {
         &__ele {

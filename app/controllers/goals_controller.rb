@@ -21,6 +21,11 @@ class GoalsController < ApplicationController
   end
 
   def update
+    if @goal.update(goal_params)
+      redirect_to category_tweets_path(@category.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -36,6 +41,6 @@ class GoalsController < ApplicationController
   end
 
   def set_goal
-    @goal = Tweet.find(params[:id])
+    @goal = @category.goals.where(user_id: current_user.id).last
   end
 end

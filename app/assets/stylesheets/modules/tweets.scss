@@ -218,18 +218,18 @@
   }
 }
 
-.contents-tweets-new {
+.contents-new-edit {
   width: 100%;
   min-height: 90%;
   padding-top: 50px;
   background-color: $contents-backgroundcolor;
-  .tweet-form-wrapper {
+  .form-wrapper {
     margin: 0 auto;
     padding: 20px;
     width: 450px;
     height: 600px;
     background-color: $content-backgroundcolor;
-    .tweet-title {
+    .form-wrapper__title {
       text-align: center;
     }
     .tweet-goal {
@@ -241,7 +241,7 @@
           border-bottom: ridge thin #ccc;
         }
       }
-    .tweet-form {
+    .form-wrapper__form {
       display: block;
       margin-top: 30px;
       &__label {

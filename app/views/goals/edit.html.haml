@@ -9,10 +9,10 @@
         =link_to category_tweets_path(category.id), class: "categories-header-wrapper__button" do
           = category.name
 
-.contents-tweets-new
-  %main{class: "tweet-form-wrapper"}
-    %h2{class: "tweet-title"}
+.contents-new-edit
+  %main{class: "form-wrapper"}
+    %h2{class: "form-wrapper__title"}
       目標を修正
-    = form_with model: [@category, @goal], local: true, class: "tweet-form" do |f|
-      = f.text_area :goal, class: "tweet-form__text", rows: "20", placeholder: "（例）&#13;&#10;最終目標&#13;&#10;○○○○○○○○○○○○○○○○○○○○○○&#13;&#10;&#13;&#10;1週間の目標&#13;&#10;△△△△△△△△△△△△△△△△△△△△△△&#13;&#10;&#13;&#10;今日の目標&#13;&#10;□□□□□□□□□□□□□□□□□□".html_safe
-      = f.submit "登録", class: "tweet-form__button"
+    = form_with model: [@category, @goal], local: true, class: "form-wrapper__form" do |f|
+      = f.text_area :goal, class: "form-wrapper__form__text", rows: "20", placeholder: "（例）&#13;&#10;最終目標&#13;&#10;○○○○○○○○○○○○○○○○○○○○○○&#13;&#10;&#13;&#10;1週間の目標&#13;&#10;△△△△△△△△△△△△△△△△△△△△△△&#13;&#10;&#13;&#10;今日の目標&#13;&#10;□□□□□□□□□□□□□□□□□□".html_safe
+      = f.submit "登録", class: "form-wrapper__form__button"

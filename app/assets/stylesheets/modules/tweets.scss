@@ -139,7 +139,6 @@
     width: 700px;
     background-color: $content-backgroundcolor;
     &__box {
-
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
@@ -202,12 +201,6 @@
             color: $border-color;
           }
         }
-      }
-      &__goal-title {
-      }
-      &__goal-text {
-        border-bottom: solid thin $border-color;
-
       }
       &__tweet {
         margin-top: 30px;

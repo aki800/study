@@ -1,0 +1,29 @@
+.users-wrapper__main__box
+  %p{class: "users-wrapper__main__box__title"}
+    = category.name
+  .users-wrapper__main__box__icon
+    %i{class: "fas fa-chevron-down fa-lg my-gray", id: "icon-#{category.id}"}
+%div{class: "users-wrapper__main__box__navs", id: "nav-#{category.id}"}
+
+
+:javascript
+      $(function() {
+        $("#icon-#{category.id}").on("click", function() {
+        var html = `<nav class ="users-wrapper__main__box__nav">
+                      <a href = "/categories/#{category.id}", class ="users-wrapper__main__box__nav__ele">
+                        自分の投稿一覧
+                      </a>
+                      <a href = "", class ="users-wrapper__main__box__nav__ele">
+                        今までの目標一覧
+                      </a>
+                      <a href = "/categories/#{category.id}/remove", class ="users-wrapper__main__box__nav__ele">
+                        このカテゴリーを消す
+                      </a>
+                    </nav>`
+        $("#nav-#{category.id}").append(html);
+
+        $("#icon-#{category.id}").on("click", function() {
+          $("#nav-#{category.id}").empty();
+          });
+        });
+      });

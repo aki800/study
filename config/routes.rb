@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'categories#index'
   resources :users
   resources :categories do
+    member do
+      get 'remove'
+    end
     resources :tweets
     resources :goals
   end

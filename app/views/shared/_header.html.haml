@@ -10,19 +10,25 @@
       = link_to new_user_session_path , class: "nav__button" do
         ログイン
 
-    - if controller.controller_name == 'categories' && controller.action_name == 'index'
-      - if user_signed_in? && current_user.categories.present?
-        = link_to category_tweets_path(current_user.categories[0]), class: "nav__button" do
-          投稿一覧
-        = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
-          ログアウト
-      - if user_signed_in? && current_user.categories.nil?
-        = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
-          ログアウト
-
     - if controller.controller_name == 'tweets' && controller.action_name == 'index'
       = link_to new_category_tweet_path(@category) , class: "nav__button" do
         投稿する
+      = link_to user_path(current_user) , class: "nav__button" do
+        マイページ
       = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
         ログアウト
+
+    -else
+      - if user_signed_in? && current_user.categories.present?
+        = link_to category_tweets_path(current_user.categories[0]), class: "nav__button" do
+          投稿一覧
+        = link_to user_path(current_user) , class: "nav__button" do
+          マイページ
+        = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
+          ログアウト
+      - if user_signed_in? && current_user.categories.nil?
+        = link_to user_path(current_user) , class: "nav__button" do
+          マイページ
+        = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
+          ログアウト
 

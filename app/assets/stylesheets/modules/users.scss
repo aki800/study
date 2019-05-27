@@ -45,6 +45,9 @@
           color: $font-color;
           text-decoration: none;
         }
+        &__user-name:hover {
+          opacity: 0.7;
+        }
         &__follows {
           height: 40%;
           width: 100%;
@@ -73,6 +76,14 @@
             color: $font-color;
           }
         }
+        &__box.emphasis {
+          opacity: 0.7;
+          background-color: #eee;
+          font-weight: bold;
+        }
+        &__box:hover {
+          opacity: 0.7;
+        }
       }
     }
     .users-wrapper {
@@ -92,6 +103,7 @@
           margin: 0 auto;
           padding: 0 30px;
           border: ridge thin $border-color;
+          cursor : pointer;
           &__title {
             float: left;
           }
@@ -100,11 +112,14 @@
             line-height: 50px;
           }
         }
-        .users-wrapper__main__box__nav {
+        &__box:hover {
+          background-color: #eee;
+        }
+        &__nav {
           width: 70%;
           height: 50px;
           margin: 0 auto;
-          .users-wrapper__main__box__nav__ele {
+          &__ele {
             display: inline-block;
             width: calc(95% / 3);
             line-height: 50px;

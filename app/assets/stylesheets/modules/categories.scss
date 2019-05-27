@@ -24,7 +24,7 @@
       position: relative;
       margin: 10px;
       width: calc( calc(900px - 100px) / 4);
-      height: 40px;
+      height: 200px;
       border-radius: 50%;
       background-color: $content-backgroundcolor;
       border: groove 0.5px $border-color;
@@ -48,10 +48,14 @@
         &__image {
         display: block;
         margin: 0 auto;
-        height: 150px;
-        width: 150px;
+        height: 90%;
+        width: 90%;
         }
       }
+    }
+    &__box:hover {
+      width: 250px;
+      height: 250px;
     }
   }
 }

@@ -6,7 +6,7 @@
       - else
         .tweets-wrapper__box__head__avatar-not
           %i{class: "fas fa-user-circle fa-3x my-gray"}
-    =link_to "", class: "tweets-wrapper__box__head__user-name" do
+    =link_to user_path(current_user), class: "tweets-wrapper__box__head__user-name" do
       = tweet.user.nickname
     .tweets-wrapper__box__head__date
       = tweet.created_at

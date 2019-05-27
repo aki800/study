@@ -26,6 +26,7 @@
     }
     &__button:hover {
       opacity: 0.7;
+      background-color: #eee;
     }
   }
   .add-button {
@@ -98,6 +99,9 @@
           color: $font-color;
           text-decoration: none;
         }
+        &__user-name:hover {
+          opacity: 0.7;
+        }
         &__follows {
           height: 40%;
           width: 100%;
@@ -127,6 +131,9 @@
           &__ele {
           color: $font-color;
           }
+          &__ele:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
@@ -149,6 +156,7 @@
           display: inline-block;
           width: 60px;
           height: 60px;
+          border-radius: 50%;
         }
         &__avatar-not {
           display: inline-block;
@@ -165,6 +173,9 @@
           text-decoration: none;
           color: $font-color;
           font-weight: bold;
+        }
+        &__user-name:hover {
+          opacity: 0.7;
         }
         &__date {
           display: inline-block;

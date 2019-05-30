@@ -1,0 +1,11 @@
+= render "shared/header"
+
+.contents-categories-show
+  .contents-wrapper
+    =render partial: "shared/side"
+    %main{class: "categories-wrapper"}
+      .categories-wrapper__head
+        %h2{class: "categories-wrapper__head__title"}
+          カテゴリー：#{@category.name} 自分の投稿
+      .categories-wrapper__main
+        = render partial: "tweets/tweet", collection: @tweets, :as => "tweet"

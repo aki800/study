@@ -191,4 +191,26 @@
   }
 }
 
-
+.contents-categories-show {
+  box-sizing: border-box;
+  clear: both;
+  min-height: 90%;
+  width: 100%;
+  background-color: $contents-backgroundcolor;
+  .contents-wrapper {
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 100%;
+    text-align: center;
+    .categories-wrapper {
+      display: inline-block;
+      width: 800px;
+      min-height: 100px;
+      padding: 20px;
+      background-color: $content-backgroundcolor;
+      .categories-wrapper__main {
+        width: 800px;
+      }
+    }
+  }
+}

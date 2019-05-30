@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :set_category, only: [:show, :remove]
   def index
     @categories = Category.where(ancestry: nil)
     gon.study_categories = @categories[0].children
@@ -45,9 +46,16 @@ class CategoriesController < ApplicationController
 
   end
 
+  def show
+    @tweets = current_user.tweets.where(category_id: @category.id)
+  end
+
   def remove
-    @category = Category.find(params[:id])
     @category.category_users[0].delete
     redirect_to user_path(current_user)
+  end
+
+  def set_category
+    @category = Category.find(params[:id])
   end
 end

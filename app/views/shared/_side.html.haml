@@ -17,10 +17,10 @@
         %p{class: "side-bar__info__follow__number"} 0
 
   %nav{class: "side-bar__nav"}
-    = link_to "", class: "side-bar__nav__box emphasis" do
+    = link_to user_path(current_user), class: "side-bar__nav__box emphasis" do
       %p{class: "side-bar__nav__box__text"}
         参加カテゴリー
-    = link_to "", class: "side-bar__nav__box" do
+    = link_to edit_user_registration_path, class: "side-bar__nav__box" do
       %p{class: "side-bar__nav__box__text"}
         プロフィール情報
     = link_to "", class: "side-bar__nav__box" do

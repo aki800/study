@@ -50,6 +50,42 @@
             color: $font-color;
           }
         }
+
+        &__forms {
+          width: 500px;
+          margin: 0 auto;
+          .field {
+            margin: 30px;
+            .field__label {
+              width: 219px;
+              margin: 0 auto;
+              text-align: left;
+            }
+            .field__current-image {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+            }
+            .field__image {
+              input {
+              }
+            }
+            .field__text {
+              input {
+                height: 30px;
+                border-radius: 5px;
+              }
+            }
+          }
+          .actions {
+            margin: 40px;
+            &__button {
+              width: 219px;
+              height: 30px;
+              border-radius: 5px;
+            }
+          }
+        }
       }
       .add-button {
         display: block;

@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :remove]
+  before_action :set_category, only: [:show, :showgoals,  :remove]
+  before_action :set_tweets, only: [:show, :showgoals]
   def index
     @categories = Category.where(ancestry: nil)
     gon.study_categories = @categories[0].children
@@ -47,7 +48,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @tweets = current_user.tweets.where(category_id: @category.id)
+  end
+
+  def showgoals
+    @goals = current_user.goals.where(category_id: @category.id)
   end
 
   def remove
@@ -57,5 +61,9 @@ class CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
+  end
+
+  def set_tweets
+    @tweets = current_user.tweets.where(category_id: @category.id)
   end
 end

@@ -1,0 +1,14 @@
+= render "shared/header"
+
+.contents-categories-show
+  .contents-wrapper
+    =render partial: "shared/side"
+    %main{class: "categories-wrapper"}
+      .categories-wrapper__head
+        .categories-wrapper__head__subtitle
+          カテゴリー：#{@category.name}
+        %h2{class: "categories-wrapper__head__title"}
+          今までの目標一覧
+      .categories-wrapper__main
+        = render partial: "goals/goal", collection: @goals, :as => "goal"
+

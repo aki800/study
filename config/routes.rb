@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     member do
       get 'remove'
     end
+    member do
+      get 'showgoals'
+    end
     resources :tweets
     resources :goals
   end

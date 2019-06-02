@@ -1,14 +1,38 @@
 = render "shared/header"
+%nav{class: "nav-categories"}
+  .categories-header-wrapper
+    .categories-header-wrapper__button
+      = @category.name
 
-.contents-categories-show
+
+.contents-tweets-index
   .contents-wrapper
-    =render partial: "shared/side"
-    %main{class: "categories-wrapper"}
-      .categories-wrapper__head
-        .categories-wrapper__head__subtitle
-          カテゴリー：#{@category.name}
-        %h2{class: "categories-wrapper__head__title"}
-          今までの目標一覧
-      .categories-wrapper__main
-        = render partial: "goals/goal", collection: @goals, :as => "goal"
+    .side-bar
+      = link_to user_path(current_user) do
+        - if current_user.image.present?
+          = image_tag(current_user.image.url, class: "side-bar__avatar")
+        - else
+          .side-bar__avatar-not
+            %i{class: "fas fa-user-circle fa-8x my-gray"}
+      .side-bar__info
+        =link_to user_path(current_user), class: "side-bar__info__user-name" do
+          = current_user.nickname
+        .side-bar__info__follows
+          .side-bar__info__follows__follow
+            フォロー数
+            %p{class: "side-bar__info__follow__number"} 0
+          .side-bar__info__follows__follow
+            フォロワー数
+            %p{class: "side-bar__info__follow__number"} 0
+
+    %main{class: "goals-wrapper"}
+      %h2{class: "goals-wrapper__title"}
+        今までの目標一覧
+      - @goals.each do |goal|
+        .goals-wrapper__box
+          .goals-wrapper__box__date
+            = goal.created_at
+          .goals-wrapper__box__tweet
+            = goal.goal
+
 

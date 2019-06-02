@@ -140,7 +140,7 @@
     }
   }
 
-  .tweets-wrapper {
+  .tweets-wrapper, .goals-wrapper {
     display: inline-block;
     margin-bottom: 30px;
     width: 700px;
@@ -148,7 +148,7 @@
   }
 }
 
-.tweets-wrapper__box {
+.tweets-wrapper__box, .goals-wrapper__box {
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;

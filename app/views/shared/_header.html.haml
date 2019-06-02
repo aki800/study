@@ -27,7 +27,7 @@
         = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
           ログアウト
       - if user_signed_in? && current_user.categories.nil?
-        = link_to user_path(current_user) , class: "nav__button" do
+        = link_to "" , class: "nav__button" do
           マイページ
         = link_to destroy_user_session_path, method: :delete, class: "nav__button" do
           ログアウト

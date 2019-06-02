@@ -1,12 +1,12 @@
 .side-bar
-  = link_to user_path(current_user) do
+  = link_to "" do
     - if current_user.image.present?
       = image_tag(current_user.image.url, class: "side-bar__avatar")
     - else
       .side-bar__avatar-not
         %i{class: "fas fa-user-circle fa-8x my-gray"}
   .side-bar__info
-    =link_to user_path(current_user), class: "side-bar__info__user-name" do
+    =link_to "", class: "side-bar__info__user-name" do
       = current_user.nickname
     .side-bar__info__follows
       .side-bar__info__follows__follow

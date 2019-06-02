@@ -2,34 +2,8 @@
 
 .contents-users-show
   .contents-wrapper
-    .side-bar
-      = link_to user_path(current_user) do
-        - if current_user.image.present?
-          = image_tag(current_user.image.url, class: "side-bar__avatar")
-        - else
-          .side-bar__avatar-not
-            %i{class: "fas fa-user-circle fa-8x my-gray"}
-      .side-bar__info
-        =link_to user_path(current_user), class: "side-bar__info__user-name" do
-          = current_user.nickname
-        .side-bar__info__follows
-          .side-bar__info__follows__follow
-            フォロー数
-            %p{class: "side-bar__info__follow__number"} 0
-          .side-bar__info__follows__follow
-            フォロワー数
-            %p{class: "side-bar__info__follow__number"} 0
+    =render partial: "shared/side"
 
-      %nav{class: "side-bar__nav"}
-        = link_to "", class: "side-bar__nav__box emphasis" do
-          %p{class: "side-bar__nav__box__text"}
-            参加カテゴリー
-        = link_to "", class: "side-bar__nav__box" do
-          %p{class: "side-bar__nav__box__text"}
-            プロフィール情報
-        = link_to "", class: "side-bar__nav__box" do
-          %p{class: "side-bar__nav__box__text"}
-            退会
     %main{class: "users-wrapper"}
       .users-wrapper__head
         %h2{class: "users-wrapper__head__title"}
@@ -39,3 +13,5 @@
 
       =link_to root_path, class: "add-button" do
         ➕
+
+

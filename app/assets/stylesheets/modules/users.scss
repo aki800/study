@@ -9,174 +9,192 @@
     padding-top: 30px;
     width: 100%;
     text-align: center;
-    .users-wrapper {
-      display: inline-block;
-      width: 700px;
-      min-height: 100px;
-      padding: 20px;
-      background-color: $content-backgroundcolor;
-      &__head {
-        &__title {
-        }
-      }
-      &__main {
-        &__box {
-          width: 70%;
-          height: 50px;
-          margin: 0 auto;
-          padding: 0 30px;
-          border: ridge thin $border-color;
-          cursor : pointer;
+    @media screen and (max-width: 700px) {
+      .users-wrapper {
+        display: inline-block;
+        width: 90%;
+        min-height: 100px;
+        padding: 20px;
+        background-color: $content-backgroundcolor;
+        &__head {
           &__title {
-            float: left;
-          }
-          &__icon {
-            float: right;
-            line-height: 50px;
           }
         }
-        &__box:hover {
-          background-color: #eee;
-        }
-        &__nav {
-          width: 70%;
-          height: 50px;
-          margin: 0 auto;
-          &__ele {
-            display: inline-block;
-            width: calc(95% / 3);
-            line-height: 50px;
-            text-decoration: none;
-            color: $font-color;
+        &__main {
+          &__box {
+            width: 70%;
+            height: 50px;
+            margin: 0 auto;
+            padding: 0 30px;
+            border: ridge thin $border-color;
+            cursor : pointer;
+            &__title {
+              float: left;
+            }
+            &__icon {
+              float: right;
+              line-height: 50px;
+            }
           }
-        }
+          &__box:hover {
+            background-color: #eee;
+          }
+          &__nav {
+            width: 100%;
+            height: 50px;
+            margin: 0 auto;
+            &__ele {
+              display: inline-block;
+              width: calc(95% / 3);
+              line-height: 50px;
+              text-decoration: none;
+              color: $font-color;
+            }
+          }
 
-        &__forms {
-          width: 500px;
-          margin: 0 auto;
-          .field {
-            margin: 30px;
-            .field__label {
-              width: 219px;
-              margin: 0 auto;
-              text-align: left;
-            }
-            .field__current-image {
-              width: 100px;
-              height: 100px;
-              border-radius: 50%;
-            }
-            .field__image {
-              input {
+          &__forms {
+            width: 500px;
+            margin: 0 auto;
+            .field {
+              margin: 30px;
+              .field__label {
+                width: 219px;
+                margin: 0 auto;
+                text-align: left;
+              }
+              .field__current-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+              }
+              .field__image {
+                input {
+                }
+              }
+              .field__text {
+                input {
+                  height: 30px;
+                  border-radius: 5px;
+                }
               }
             }
-            .field__text {
-              input {
+            .actions {
+              margin: 40px;
+              &__button {
+                width: 219px;
                 height: 30px;
                 border-radius: 5px;
               }
             }
           }
-          .actions {
-            margin: 40px;
-            &__button {
-              width: 219px;
-              height: 30px;
-              border-radius: 5px;
+        }
+        .add-button {
+          display: block;
+          float: right;
+          margin-top: 30px;
+          height: 50px;
+          width: 50px;
+          text-align: center;
+          line-height: 50px;
+          border-radius: 60px;
+          text-decoration: none;
+          background-color: $header-category-color;
+        }
+      }
+    }
+    @media screen and (min-width: 701px) {
+      .users-wrapper {
+        display: inline-block;
+        width: 700px;
+        min-height: 100px;
+        padding: 20px;
+        background-color: $content-backgroundcolor;
+        &__head {
+          &__title {
+          }
+        }
+        &__main {
+          &__box {
+            width: 70%;
+            height: 50px;
+            margin: 0 auto;
+            padding: 0 30px;
+            border: ridge thin $border-color;
+            cursor : pointer;
+            &__title {
+              float: left;
+            }
+            &__icon {
+              float: right;
+              line-height: 50px;
+            }
+          }
+          &__box:hover {
+            background-color: #eee;
+          }
+          &__nav {
+            width: 70%;
+            height: 50px;
+            margin: 0 auto;
+            &__ele {
+              display: inline-block;
+              width: calc(95% / 3);
+              line-height: 50px;
+              text-decoration: none;
+              color: $font-color;
+            }
+          }
+
+          &__forms {
+            width: 500px;
+            margin: 0 auto;
+            .field {
+              margin: 30px;
+              .field__label {
+                width: 219px;
+                margin: 0 auto;
+                text-align: left;
+              }
+              .field__current-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+              }
+              .field__image {
+                input {
+                }
+              }
+              .field__text {
+                input {
+                  height: 30px;
+                  border-radius: 5px;
+                }
+              }
+            }
+            .actions {
+              margin: 40px;
+              &__button {
+                width: 219px;
+                height: 30px;
+                border-radius: 5px;
+              }
             }
           }
         }
-      }
-      .add-button {
-        display: block;
-        float: right;
-        margin-top: 30px;
-        height: 50px;
-        width: 50px;
-        text-align: center;
-        line-height: 50px;
-        border-radius: 60px;
-        text-decoration: none;
-        background-color: $header-category-color;
+        .add-button {
+          display: block;
+          float: right;
+          margin-top: 30px;
+          height: 50px;
+          width: 50px;
+          text-align: center;
+          line-height: 50px;
+          border-radius: 60px;
+          text-decoration: none;
+          background-color: $header-category-color;
+        }
       }
     }
   }
 }
 
-.side-bar {
-  display: inline-block;
-  vertical-align: top;
-  z-index: 1;
-  margin-right: 100px;
-  min-height: 100px;
-  background-color: $contents-backgroundcolor;
-  &__avatar {
-    display: block;
-    margin: 0 auto;
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  &__avatar-not {
-    margin: 0 auto;
-    .my-gray {
-      color: #c0c0c0;
-      margin-bottom: 20px;
-    }
-  }
-  &__info {
-    margin: 0 auto;
-    width: 300px;
-    height: 100px;
-    padding: 20px;
-    background-color: $content-backgroundcolor;
-    border: ridge thin $border-color;
-    &__user-name {
-      display: block;
-      margin-bottom: 10px;
-      text-align: center;
-      color: $font-color;
-      text-decoration: none;
-    }
-    &__user-name:hover {
-      opacity: 0.7;
-    }
-    &__follows {
-      height: 40%;
-      width: 100%;
-      &__follow {
-        display: inline-block;
-        height: 100%;
-        width: 48%;
-        &__number {
-          text-align: center;
-        }
-      }
-    }
-  }
-  &__nav {
-    margin-top: 40px;
-    width: 340px;
-    background-color: $content-backgroundcolor;
-    &__box {
-      display: block;
-      height: 50px;
-      text-decoration: none;
-      border-bottom: ridge thin $border-color;
-      &__text {
-        margin-top: 0;
-        line-height: 50px;
-        color: $font-color;
-      }
-    }
-    &__box.emphasis {
-      opacity: 0.7;
-      background-color: #eee;
-      font-weight: bold;
-    }
-    &__box:hover {
-      opacity: 0.7;
-    }
-  }
-}

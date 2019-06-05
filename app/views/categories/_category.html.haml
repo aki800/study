@@ -11,13 +11,13 @@
         $("#box-#{category.id}").on("click", function() {
         var html = `<nav class ="users-wrapper__main__box__nav">
                       <a href = "/categories/#{category.id}/category_users/#{category.category_users.where(user_id: current_user.id).ids[0]}", class ="users-wrapper__main__box__nav__ele">
-                        投稿一覧
+                        投稿一覧を見る
                       </a>
                       <a href = "/categories/#{category.id}/showgoals", class ="users-wrapper__main__box__nav__ele">
-                        目標一覧
+                        目標一覧を見る
                       </a>
                       <a href = "/categories/#{category.id}/remove", class ="users-wrapper__main__box__nav__ele">
-                        カテゴリ退出
+                        カテゴリー退出する
                       </a>
                     </nav>`
         $("#nav-#{category.id}").append(html);

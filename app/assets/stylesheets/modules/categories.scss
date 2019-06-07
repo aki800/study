@@ -15,13 +15,13 @@
   }
   .categories-wrapper {
     margin: 0 auto;
-    padding: 10px;
-    width: 950px;
+    padding: 10px 0px;
+    width: 77%;
     min-height: 200px;
     background-color: $contents-backgroundcolor;
     &__box {
-      display: inline-block;
       position: relative;
+      display: inline-block;
       margin: 10px;
       width: calc( calc(900px - 100px) / 4);
       height: 200px;

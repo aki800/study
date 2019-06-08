@@ -31,7 +31,7 @@
       - @goals.each do |goal|
         .goals-wrapper__box
           .goals-wrapper__box__date
-            = goal.created_at
+            = goal.created_at.strftime("%Y-%m-%d %H:%M")
           .goals-wrapper__box__tweet
             = goal.goal
 

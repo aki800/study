@@ -9,7 +9,7 @@
     =link_to category_category_user_path(@category, @category_users.where(category_id: @category.id, user_id: tweet.user.id).ids), class: "tweets-wrapper__box__head__user-name" do
       = tweet.user.nickname
     .tweets-wrapper__box__head__date
-      = tweet.created_at
+      = tweet.created_at.strftime("%Y-%m-%d %H:%M")
     -if tweet.user == current_user
       .tweets-wrapper__box__head__icon
         %i{class: "fas fa-chevron-down fa-lg my-gray", id: "icon-#{tweet.id}"}

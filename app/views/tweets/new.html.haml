@@ -9,7 +9,8 @@
         .tweet-goal__text
           = simple_format(@goal.goal)
       -else
-        目標の記入はありません
+        .tweet-goal__text
+          目標の記入はありません
 
     = form_with model: [@category, @tweet], local: true, class: "form-wrapper__form" do |f|
       = f.text_area :text, class: "form-wrapper__form__text", rows: "10", placeholder: "達成したことをツイートしよう"

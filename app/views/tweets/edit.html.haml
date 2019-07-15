@@ -3,7 +3,7 @@
 .contents-new-edit
   %main{class: "form-wrapper"}
     %h2{class: "form-wrapper__title"}
-      投稿する
+      編集する
     .tweet-goal
       -if @goal.present?
         .tweet-goal__text
@@ -17,4 +17,4 @@
       .form-wrapper__form__image
         = f.fields_for :tweet_images do |tweet_image|
           = tweet_image.file_field :image
-      = f.submit "投稿", class: "form-wrapper__form__button"
+      = f.submit "更新", class: "form-wrapper__form__button"

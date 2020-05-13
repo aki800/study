@@ -61,6 +61,10 @@ class TweetsController < ApplicationController
   end
 
   def set_goal
-    @goal = @category.goals.where(user_id: current_user.id).last
+    if current_user.present?
+      @goal = @category.goals.where(user_id: current_user.id).last
+    else
+
+    end
   end
 end

@@ -1,10 +1,10 @@
 = render "shared/header"
 .contents
   .categories-images
-    =image_tag("study_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
-    =image_tag("exercise_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
-    =image_tag("health_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
-    =image_tag("hobby_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+    / =image_tag("study_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+    / =image_tag("exercise_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+    / =image_tag("health_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
+    / =image_tag("hobby_background.jpeg", class: ".categories-images__ele", style: "height: 500px;")
 
 
 
@@ -18,10 +18,10 @@
             .categories__box__title__text
               = category.name
             - if category.name == "勉強"
-              =image_tag("study.png", class: "categories__box__title__image")
+              / =image_tag("study.png", class: "categories__box__title__image")
             - if category.name == "運動"
-              =image_tag("exercise.png", class: "categories__box__title__image")
+              / =image_tag("exercise.png", class: "categories__box__title__image")
             - if category.name == "健康"
-              =image_tag("health.png", class: "categories__box__title__image")
+              / =image_tag("health.png", class: "categories__box__title__image")
             - if category.name == "趣味・創作活動"
-              =image_tag("hobby.png", class: "categories__box__title__image")
+              / =image_tag("hobby.png", class: "categories__box__title__image")

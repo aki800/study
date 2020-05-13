@@ -17,7 +17,7 @@
               .field__label
                 = f.label :"今のプロフィール画像"
               %br/
-              = image_tag(current_user.image.url, class: "field__current-image")
+              / = image_tag(current_user.image.url, class: "field__current-image")
               .field__image
                 = f.file_field :image
 

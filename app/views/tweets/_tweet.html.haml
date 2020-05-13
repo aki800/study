@@ -2,7 +2,7 @@
   .tweets-wrapper__box__head{id: "box-#{tweet.id}"}
     = link_to category_category_user_path(@category, @category_users.where(category_id: @category.id, user_id: tweet.user.id).ids) do
       - if tweet.user.image.present?
-        = image_tag(tweet.user.image.url, class: "tweets-wrapper__box__head__avatar")
+        / = image_tag(tweet.user.image.url, class: "tweets-wrapper__box__head__avatar")
       - else
         .tweets-wrapper__box__head__avatar-not
           %i{class: "fas fa-user-circle fa-3x my-gray"}
